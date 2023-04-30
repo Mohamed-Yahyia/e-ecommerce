@@ -1,0 +1,162 @@
+/* Main styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+#cart {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th:first-child,
+td:first-child {
+  width: 10%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 40%;
+  text-align: left;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 15%;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+  width: 20%;
+}
+
+th:last-child,
+td:last-child {
+  width: 15%;
+}
+
+.itemimg {
+  max-width: 100%;
+  height: auto;
+}
+
+input[type="number"] {
+  width: 60px;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+#cart-summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#discount-code {
+  margin-bottom: 2px;
+  width: 150px;
+  height: 2rem;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin-right: 0.5rem;
+}
+
+#apply-discount,
+#checkout {
+  margin: 2px;
+  padding: 0.7rem 1rem;
+  border-radius: 3px;
+  border: none;
+  background-color: #0077cc;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#apply-discount:hover,
+#checkout:hover {
+  background-color: #005ea6;
+}
+
+#apply-discount:active,
+#checkout:active {
+  transform: translateY(1px);
+}
+
+#total-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  #cart {
+    flex-direction: column;
+  }
+
+  th:first-child,
+  td:first-child {
+    width: 30%;
+  }
+
+  th:nth-child(2),
+  td:nth-child(2) {
+    width: auto;
+    text-align: center;
+  }
+
+  th:nth-child(3),
+  td:nth-child(3) {
+    width: 40%;
+  }
+
+  th:nth-child(4),
+  td:nth-child(4) {
+    width: auto;
+    text-align: center;
+  }
+
+  th:last-child,
+  td:last-child {
+    width: 30%;
+  }
+
+  #discount-code {
+
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}

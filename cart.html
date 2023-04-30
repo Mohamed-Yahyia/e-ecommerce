@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Shopping Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+          rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/86d279f712.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="cartstyle.css">
+    <link rel="icon" type="image/x-icon" href="../download.ico">
+    <style>
+        body {
+            background-color: aliceblue;
+        }
+
+        nav {
+            background-color: white;
+        }
+        @media screen and (max-width: 990px) {
+            .header .card {
+                font-size: 13px;
+            }
+
+            .header .section1 > img {
+                height: 75% !important;
+            }
+        }
+        footer {
+            background-color: #272727;
+            color: #fff;
+            padding: 30px 0;
+        }
+
+            footer a {
+                color: #fff;
+            }
+
+            footer h5 {
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            footer ul {
+                list-style: none;
+                padding-left: 0;
+            }
+
+                footer ul li {
+                    margin-bottom: 10px;
+                }
+
+                    footer ul li a:hover {
+                        color: #fff;
+                        text-decoration: none;
+                    }
+
+            footer i {
+                margin-right: 5px;
+                font-size: 18px;
+            }
+            footer a {
+                display: inline;
+                text-decoration: none;
+                color: white;
+            }
+
+            footer ul {
+                list-style: none;
+            }
+    </style>
+</head>
+
+<body onload="Check_Sign()">
+
+    <!--simple navbar 1-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="mainHeader">
+                    <img src="img/AR_-_1170x60_.png" height="100%" width="100%" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-4">
+                <ul class="list-group list-group-horizontal" style="margin-left: 50px;">
+
+                    <li class="list-group-item bg-transparent border border-0 border-end">
+                        Arbia
+                        <img src="eg.png" class="  border border-0 border-end" style="border-radius: 50%;margin-top: 1px;display: inline; height: 25px; width: 30px; float:right;margin: 4px;">
+
+                    </li>
+
+                    <li class="list-group-item  bg-transparent border border-0">
+                        English
+                        <img src="en.png" width="40px" height="40px" style="border-radius: 50%;margin-top: 1px;display: inline; height: 25px; width: 30px; float:right;margin: 2px;">
+
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-4 text-left">
+                <ul class="list-group list-group-horizontal">
+                    <p style="margin-left: 300px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-paypal" viewBox="0 0 16 16" style="padding-top: 3px ;margin:0%;">
+                            <path d="M14.06 3.713c.12-1.071-.093-1.832-.702-2.526C12.628.356 11.312 0 9.626 0H4.734a.7.7 0 0 0-.691.59L2.005 13.509a.42.42 0 0 0 .415.486h2.756l-.202 1.28a.628.628 0 0 0 .62.726H8.14c.429 0 .793-.31.862-.731l.025-.13.48-3.043.03-.164.001-.007a.351.351 0 0 1 .348-.297h.38c1.266 0 2.425-.256 3.345-.91.379-.27.712-.603.993-1.005a4.942 4.942 0 0 0 .88-2.195c.242-1.246.13-2.356-.57-3.154a2.687 2.687 0 0 0-.76-.59l-.094-.061ZM6.543 8.82a.695.695 0 0 1 .321-.079H8.3c2.82 0 5.027-1.144 5.672-4.456l.003-.016c.217.124.4.27.548.438.546.623.679 1.535.45 2.71-.272 1.397-.866 2.307-1.663 2.874-.802.57-1.842.815-3.043.815h-.38a.873.873 0 0 0-.863.734l-.03.164-.48 3.043-.024.13-.001.004a.352.352 0 0 1-.348.296H5.595a.106.106 0 0 1-.105-.123l.208-1.32.845-5.214Z" />
+                        </svg>
+                    <li class="list-group-item mx-3 bg-transparent border border-0" style="color: blue; text-align: center;"> PAY</li>
+
+                    </p>
+                </ul>
+            </div>
+
+            <div class="col-4 text-left">
+                <p style="float: right;margin-right: 70px;text-align: center;">
+
+                    <img src="ju.png" width="40px" height="40px" style="border-radius: 50%;margin-top: 1px;display: inline; height: 25px; width: 30px; float:right; margin-top: 5px;">
+                    <bdi style="color: darkorange ; float: right; margin: 3px;"> Sell on Jumia   </bdi>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!--basic navbar 2-->
+
+    <nav class="navbar navbar-expand-lg navbar-white bg-white">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="cart.html">
+                            Cart
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Help
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                            <li>
+
+                                <a class="dropdown-item" href="#">
+                                    Help Center
+
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Place & track order
+
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Order Cancellation
+
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Returns & Refunds
+
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Payment & Jumia account
+
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+
+                            <li>
+                                <button type="button" class="btn btn-secondary" style="margin-left: 15px; background-color: orangered;">
+                                    LIVE CHAT
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewBox="0 0 16 16">
+                                        <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                        <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                    </svg>
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16" style="margin-top: 7px;">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                            <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+                        </svg>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Account
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <button id="sign-in-b" type="button" class="btn btn-secondary" style="margin-left: 15px; background-color: orangered;">
+                                    <a id="sign-in-a"> SIGN IN</a>
+                                </button>
+
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+
+                                <a class="dropdown-item" href="rejester.html">
+                                    My Account
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" style="margin-left: 5px;">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                    </svg>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Orders
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box2" viewBox="0 0 16 16" style="margin-left: 5px;">
+                                        <path d="M2.95.4a1 1 0 0 1 .8-.4h8.5a1 1 0 0 1 .8.4l2.85 3.8a.5.5 0 0 1 .1.3V15a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4.5a.5.5 0 0 1 .1-.3L2.95.4ZM7.5 1H3.75L1.5 4h6V1Zm1 0v3h6l-2.25-3H8.5ZM15 5H1v10h14V5Z" />
+                                    </svg>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Saved Items
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" style="margin-top: 7px;">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                        </svg>
+                    </li>
+
+                </ul>
+                <form class="d-flex" style="margin-right: 300px;">
+                    <button class="btn btn-outline-success" onclick="gotosearch(document.getElementById('srch').value)" type="submit" style="margin-right: 8PX; background-color: orangered;">Search</button>
+                    <input id="srch" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" width="200PX" style="width: 350PX;">
+                </form>
+                <a href="home.html" style="color: black;"><p style="float: right;margin-right: 70px;text-align: center; font-size: large;">
+
+                    <img src="ju.png" width="40px" height="30px" style="border-radius: 50%;margin-top: 1px;display: inline; height: 25px; width: 30px; float:right; margin-top: 13PX;">
+                    <bdi style="color: black ; float: right; margin: 3px; font-size: 30PX; font-weight: bold;">  JUMIA </bdi>
+                </p></a>
+            </div>
+        </div>
+    </nav>
+
+
+    <h1>Shopping Cart</h1>
+    <div id="cart">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+            </tbody>
+        </table>
+        <div id="cart-summary">
+            <p>Total Price: <span id="total-price">0.00</span> EPG</p>
+            <input type="text" id="discount-code" placeholder="Discount code">
+            <button id="apply-discount">Apply Discount</button>
+            <button id="checkout">Checkout</button>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="container">
+            <div class="row text-center"
+                 style="font-size: 10px; text-align: right !important; width: 100%;  ">
+                <div class="col-md-4 col-sm-12 p-5">
+                    <img src="img/download.png" width="40%" alt="">
+                </div>
+                <div class="col-md-4 col-sm-12 p-5 ">
+                    <p class="d-block">
+                        NOUVEAU SUR JUMIA ?
+                    </p>
+                    <span class="d-block">
+                        Inscrivez-vous à nos communications pour recevoir nos meilleures offres!
+                    </span>
+                    <form action="">
+                        <input type="email" name="" placeholder="  enter your email" id="" width="240PX" height="35%">
+                        <button style="background-color: transparent;border: 2px solid white;padding: 10px;color: white;margin: 5px 8px;">
+                            HOMME
+                        </button>
+                        <button style="background-color: transparent;border: 2px solid white;padding: 10px;color: white;margin: 5px 8px;">
+                            FEMME
+                        </button>
+                    </form>
+                </div>
+
+                <div class="col-md-4 col-sm-12 p-5 ">
+                    <a href="#" class="d-inline mt-3 p-2">
+                        <span class="d-block" style="display: inline;">
+                            <img src="ju.png" width="10%" height="15%" alt="">
+
+                            JUMIA DANS VOTRE POCHE!
+                        </span>
+
+                    </a>
+
+
+                    <span class="d-block mb-2">
+                        Téléchargez notre application gratuite
+                    </span>
+                    <a href="#" class="d-inline mt-3 p-2"><img src="pro img/header.png" width="30%" alt=""></a>
+                    <a href="#" class="d-inline  mt-3 p-2"><img src="pro img/header.png" width="30%" alt=""></a>
+                </div>
+            </div>
+            <div class="row bg-gray">
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <h5>Categories</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Phones &amp; Tablets</a></li>
+                        <li><a href="#">Electronics</a></li>
+                        <li><a href="#">Fashion</a></li>
+                        <li><a href="#">Baby Products</a></li>
+                        <li><a href="#">Health &amp; Beauty</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <h5>Customer Care</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">How to Shop on Jumia</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Join Jumia</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <h5>About Jumia</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Jumia Careers</a></li>
+                        <li><a href="#">Terms and Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <h5>Follow Us</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 row">
+
+                    <h5>Jumia Worldwide</h5>
+                    <div class="col-4">
+                        <ul class="par">
+                            <li><a href="#" class="">Algeria</a></li>
+                            <li><a href="#" class="">Morocco</a></li>
+                            <li><a href="#" class="">Ghana</a></li>
+                            <li><a href="#" class="">Tunisia</a></li>
+                            <li><a href="#" class="">Nigeria</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-4">
+                        <ul class="par">
+                            <li><a href="#" class="">Algeria</a></li>
+                            <li><a href="#" class="">Morocco</a></li>
+                            <li><a href="#" class="">Ghana</a></li>
+                            <li><a href="#" class="">Tunisia</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function Check_Sign() {
+            debugger
+
+            var User = localStorage.getItem("All_Use_Email")
+            if (User != null) {
+                var a = document.getElementById("sign-in-a")
+                a.innerHTML = "Sign Out"
+                a.removeAttribute("onclick")
+                a.setAttribute("onclick", "logout()")
+            }
+
+            else {
+                debugger
+                var a = document.getElementById("sign-in-a")
+                a.setAttribute("onclick", "sign_in()")
+            }
+        }
+        function logout() {
+            debugger
+            var a = document.getElementById("sign-in-a")
+            localStorage.removeItem("All_Use_Email")
+            a.setAttribute("href", "#")
+            a.innerHTML = "Sign In"
+            a.setAttribute("onclick", "sign_in()")
+        }
+        function sign_in() {
+            debugger
+            var a = document.getElementById("sign-in-a")
+            a.setAttribute("href", "../Login/Login&Registration.html")
+        }
+    </script>
+    </script>
+
+    <script src="main.js"></script>
+    <script src="../main/search.js"></script>
+</body>
+
+</html>
